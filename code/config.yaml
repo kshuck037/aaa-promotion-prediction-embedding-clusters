@@ -1,0 +1,155 @@
+get_data: 2 # 0 - Get PBP, 1 - Load PBP Calc Stats, 2 - Load Stats
+data_dir: './data'
+
+seasons: 
+  - 2023
+  - 2024 
+  - 2025
+
+# levels = [11, 12] - Skip AA for Now
+levels:
+  - 11
+
+level_map:
+  11: 'AAA' 
+  12: 'AA'
+
+date_url: 'https://statsapi.mlb.com/api/v1/schedule?sportId={level}&season={season}&gameType=R&fields=dates,games,gamePk,officialDate,dates,games,status,codedGameState,dates,games,tiebreaker'
+game_url: 'https://statsapi.mlb.com/api/v1/game/{gamePk}/'
+player_url: 'https://statsapi.mlb.com/api/v1/people/{id}/'
+
+fields:
+  batting: 
+    - groundOuts
+    - airOuts
+    - runs
+    - doubles
+    - triples
+    - homeRuns
+    - strikeOuts
+    - baseOnBalls
+    - hits
+    - atBats
+    - plateAppearances
+    - totalBases
+    - rbi
+    - hitByPitch
+    - sacFlies
+  fielding: 
+    - assists
+    - putOuts
+    - chances
+  pitching: 
+    - groundOuts
+    - airOuts
+    - homeRuns
+    - strikeOuts
+    - baseOnBalls
+    - hits
+    - atBats
+    - numberOfPitches
+    - inningsPitched
+    - earnedRuns
+    - battersFaced
+    - outs
+    - pitchesThrown
+    - balls
+    - strikes
+    - hitBatsmen
+
+
+metrics:
+  batting:
+    - ab
+    - strikeOutRate 
+    - bbRate
+    - hitRate
+    - groundOutRate
+    - airOutRate
+    - hrRate
+    - rbiRate
+    - runRate
+    - groundOutRatio
+    - airOutRatio
+    - avgBases
+    - SLG
+    - OBP
+    - OPS
+    - hardHitRate
+    - hardOutRate
+    - avgHitSpeed
+    - avgHitAngle
+    - avgHRSpeed
+    - avgHRAngle
+    - avgHRDistance
+    - fieldingEfficiency
+  batting_basic:
+    - ab
+    - strikeOutRate 
+    - bbRate
+    - hitRate
+    - groundOutRate
+    - airOutRate
+    - hrRate
+    - rbiRate
+    - runRate
+    - groundOutRatio
+    - airOutRatio
+    - avgBases
+    - SLG
+    - OBP
+    - OPS
+  pitching:
+    - strikeOutRate
+    - airOutRate
+    - groundOutRate
+    - pitchesPerAtBat
+    - pitchesPerAtInning
+    - strikeRate
+    - ballRate 
+    - hitBatsmenRate
+    - earnedRunsAverage
+    - WHIP
+    - HRperInning
+    - inningsPitched
+    - startSpeed_SI
+    - startSpeed_FF
+    - startSpeed_SL
+    - startSpeed_CH
+    - startSpeed_CU
+    - spinRate_SI
+    - spinRate_FF
+    - spinRate_SL
+    - spinRate_CH
+    - spinRate_CU
+    - breakAngle_SI
+    - breakAngle_FF
+    - breakAngle_SL
+    - breakAngle_CH
+    - breakAngle_CU
+    - breakLength_SI
+    - breakLength_FF
+    - breakLength_SL
+    - breakLength_CH
+    - breakLength_CU
+    - fieldingEfficiency
+  pitching_basic:
+    - strikeOutRate
+    - airOutRate
+    - groundOutRate
+    - pitchesPerAtBat
+    - pitchesPerAtInning
+    - strikeRate
+    - ballRate 
+    - hitBatsmenRate
+    - earnedRunsAverage
+    - WHIP
+    - HRperInning
+    - inningsPitched
+
+files:
+  pbp_pitching : 'pbp_pitching.json'
+  pbp_batting : 'pbp_batting.json'
+  boxscores: 'boxscores.json'
+  batting_stats : 'batting_stats.csv'
+  pitching_stats: 'pitching_stats.csv'

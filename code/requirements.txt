@@ -1,0 +1,7 @@
+  requests_ratelimiter
+  polars
+  pyyaml
+  pydantic
+  numpy
+  torch
+  scikit-learn
